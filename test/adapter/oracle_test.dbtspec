@@ -1,0 +1,29 @@
+target:
+    type: oracle
+    host: localhost
+    port: 1521
+    service: XEPDB1
+    schema: "dbt_{{ var('_dbt_random_suffix') }}"
+    username: SYS
+    password: root
+    as_sysdba: true
+    nls_date_format: 'YYYY-MM-DD HH24:MI:SS'
+    threads: 1
+
+projects:
+    -   overrides: data_test_ephemeral_models
+        paths:
+            models/ephemeral.sql:
+                materialized: ephemeral
+                body: "select name, id from {{ ref('base') }} where id is not null"
+
+sequences:
+    test_dbt_empty: empty
+    test_dbt_base: base
+    test_dbt_ephemeral: ephemeral
+    test_dbt_incremental: incremental
+    test_dbt_snapshot_strategy_timestamp: snapshot_strategy_timestamp
+    test_dbt_snapshot_strategy_check_cols: snapshot_strategy_check_cols
+    test_dbt_data_test: data_test
+    test_dbt_schema_test: schema_test
+    test_dbt_ephemeral_data_tests: data_test_ephemeral_models

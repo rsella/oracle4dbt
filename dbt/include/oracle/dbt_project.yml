@@ -1,0 +1,6 @@
+
+name: oracle4dbt
+version: 1.0
+config-version: 2
+
+macro-paths: ["macros"]

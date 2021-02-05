@@ -1,0 +1,24 @@
+default:
+  outputs:
+
+    dev:
+      type: oracle
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      service: [service]
+      username: [dev_username]
+      password: [dev_password]
+      schema: [dev_schema]
+
+    prod:
+      type: oracle
+      threads: [1 or more]
+      host: [host]
+      port: [port]
+      service: [ service ]
+      username: [prod_username]
+      password: [prod_password]
+      schema: [prod_schema]
+
+  target: dev

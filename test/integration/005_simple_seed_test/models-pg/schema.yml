@@ -1,0 +1,47 @@
+version: 2
+seeds:
+- name: seed_enabled
+  columns:
+  - name: birthday
+    tests:
+    - column_type:
+        type: date
+  - name: id
+    tests:
+    - column_type:
+        type: varchar2(30 char)
+
+- name: seed_tricky
+  columns:
+  - name: id
+    tests:
+    - column_type:
+        type: number
+  - name: id_str
+    tests:
+    - column_type:
+        type: varchar2(30 char)
+  - name: a_bool
+    tests:
+    - column_type:
+        type: number
+  - name: looks_like_a_bool
+    tests:
+    - column_type:
+        type: varchar2(30 char)
+  - name: a_date
+    tests:
+    - column_type:
+        type: date
+  - name: looks_like_a_date
+    tests:
+    - column_type:
+        type: varchar2(30 char)
+  - name: relative
+    tests:
+    - column_type:
+        type: varchar2(29 char)
+  - name: weekday
+    tests:
+    - column_type:
+        type: varchar2(28 char)
