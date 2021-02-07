@@ -7,6 +7,11 @@ This adapter is not suitable for production usage. It's just a way to test DBT a
 The intended usage is to point at a **TEST** database and try out the different features.
 
 ## Installation
+Install using PyPi:
+```
+pip install oracle4dbt
+```
+
 The adapter uses the cx_Oracle package, so you need to have an Oracle client installed on your system.
 You can either use the client that comes in with your DB or download the instant client from Oracle.
 
